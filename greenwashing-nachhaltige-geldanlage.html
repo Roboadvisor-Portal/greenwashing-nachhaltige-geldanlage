@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Greenwashing 2026: Wie die neuen EBA-Leitlinien Anleger schützen, woran man echte Nachhaltigkeit erkennt und wie nachhaltige Geldanlage wirklich funktioniert.">
+  <meta name="robots" content="index, follow">
+  <title>Greenwashing 2026 – EBA-Leitlinien, echte Nachhaltigkeit & nachhaltige Geldanlage</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:       #FAF8F3;
+      --cream-dark:  #F0EDE4;
+      --ink:         #1A1A1A;
+      --ink-light:   #4A4A4A;
+      --ink-muted:   #888880;
+      --forest:      #1B4D3E;
+      --forest-mid:  #2D6A4F;
+      --forest-light:#EAF4EE;
+      --terra:       #C0622B;
+      --terra-light: #FAEAE0;
+      --terra-dark:  #9A4A1E;
+      --border:      #E0D8C8;
+      --white:       #FFFFFF;
+      --red:         #C0392B;
+      --red-light:   #FDECEA;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    /* HEADER */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 2px solid var(--ink);
+      padding: 0 2rem; height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .site-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 900; color: var(--ink);
+    }
+    .site-logo span { color: var(--forest-mid); }
+    .site-nav a {
+      color: var(--ink-muted); text-decoration: none;
+      font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-left: 2rem; transition: color 0.2s;
+    }
+    .site-nav a:hover { color: var(--terra); }
+
+    /* HERO */
+    .hero {
+      background: var(--white);
+      border-bottom: 2px solid var(--ink);
+      padding: 3rem 0 0;
+    }
+    .hero-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+    .hero-dateline {
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--ink-muted);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.8rem; margin-bottom: 2rem;
+      display: flex; justify-content: space-between;
+    }
+    .hero-dateline span { color: var(--terra); font-weight: 700; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 3rem; align-items: start;
+    }
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 900; line-height: 1.0;
+      color: var(--ink); letter-spacing: -0.02em;
+    }
+    .hero-headline em { font-style: italic; color: var(--terra); }
+    .hero-deck {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--ink-light); line-height: 1.5;
+      margin: 1.2rem 0 2rem;
+      border-left: 3px solid var(--terra);
+      padding-left: 1.2rem;
+    }
+    .hero-byline {
+      font-size: 0.75rem; color: var(--ink-muted);
+      font-weight: 500; letter-spacing: 0.05em;
+    }
+    .hero-byline strong { color: var(--ink); }
+
+    .hero-stats {
+      border-left: 1px solid var(--border);
+      padding-left: 2rem;
+    }
+    .hero-stat-item {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-stat-item:last-child { border-bottom: none; }
+    .hero-stat-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; font-weight: 900;
+      line-height: 1; color: var(--ink);
+    }
+    .hero-stat-value.terra { color: var(--terra); }
+    .hero-stat-value.forest { color: var(--forest-mid); }
+    .hero-stat-label {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--ink-muted); margin-top: 0.3rem;
+    }
+    .hero-stat-note {
+      font-size: 0.78rem; color: var(--ink-light);
+      margin-top: 0.2rem; font-style: italic;
+    }
+    .hero-footer {
+      border-top: 1px solid var(--border);
+      margin-top: 2rem; padding: 1rem 0;
+      display: flex; gap: 1rem; flex-wrap: wrap;
+    }
+    .hero-pill {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      background: var(--ink); color: var(--white);
+      padding: 0.3rem 0.8rem;
+    }
+    .hero-pill.terra-pill { background: var(--terra); }
+    .hero-pill.forest-pill { background: var(--forest); }
+
+    /* MAIN */
+    main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+
+    /* SECTION */
+    .section { margin-bottom: 4rem; }
+    .section-header {
+      display: flex; align-items: baseline; gap: 1rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 0.6rem;
+    }
+    .section-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 900;
+      color: var(--cream-dark); line-height: 1;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700; color: var(--ink); line-height: 1.1;
+    }
+    .section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--ink); margin: 2rem 0 0.6rem;
+    }
+    .section p {
+      color: var(--ink-light); font-size: 1rem;
+      max-width: 740px; margin-bottom: 1.1rem; line-height: 1.8;
+    }
+    .section a {
+      color: var(--forest-mid); text-decoration: underline;
+      text-underline-offset: 3px; font-weight: 600;
+    }
+    .section a:hover { color: var(--terra); }
+
+    /* TWO-COL */
+    .two-col {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; margin: 2rem 0;
+    }
+    .two-col p { max-width: 100%; }
+
+    /* PULL QUOTE */
+    .pull-quote {
+      background: var(--terra-light);
+      border: 1px solid #E8C4A8;
+      border-left: 5px solid var(--terra);
+      padding: 2rem 2.5rem; margin: 3rem 0;
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      font-style: italic; color: var(--ink);
+      line-height: 1.4; max-width: 100%; margin: 0;
+    }
+    .pull-quote cite {
+      display: block; margin-top: 0.8rem;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--terra); font-style: normal;
+    }
+
+    /* KENNZAHLEN-BAND */
+    .data-band {
+      margin: 3rem 0;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--ink);
+    }
+    .data-band-item {
+      background: var(--forest);
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .data-band-item:last-child { border-right: none; }
+    .data-band-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem; font-weight: 900;
+      color: var(--white); line-height: 1; display: block;
+    }
+    .data-band-value.terra { color: #F4A57A; }
+    .data-band-label {
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.4rem; display: block;
+    }
+
+    /* WARNING CARDS */
+    .warning-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0; border: 1px solid var(--border); margin: 2rem 0;
+    }
+    .wcard {
+      padding: 1.8rem 1.5rem; background: var(--white);
+      border-right: 1px solid var(--border);
+    }
+    .wcard:last-child { border-right: none; }
+    .wcard-icon { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
+    .wcard h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--ink); margin-bottom: 0.6rem;
+    }
+    .wcard p {
+      font-size: 0.88rem; color: var(--ink-light);
+      line-height: 1.6; max-width: 100%; margin: 0;
+    }
+    .wcard.danger { background: var(--red-light); border-top: 3px solid var(--red); }
+    .wcard.warning { background: #FFF8E1; border-top: 3px solid #F9A825; }
+    .wcard.safe { background: var(--forest-light); border-top: 3px solid var(--forest-mid); }
+
+    /* EBA TIMELINE */
+    .eba-steps { margin: 2rem 0; }
+    .eba-step {
+      display: flex; gap: 1.5rem; margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);
+    }
+    .eba-step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .eba-step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem; font-weight: 900;
+      color: var(--terra); line-height: 1;
+      min-width: 60px; text-align: center;
+    }
+    .eba-step-content h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--ink); margin-bottom: 0.4rem;
+    }
+    .eba-step-content p {
+      font-size: 0.9rem; color: var(--ink-light);
+      max-width: 100%; margin: 0; line-height: 1.6;
+    }
+
+    /* TABLE */
+    .table-wrap { overflow-x: auto; margin: 2rem 0; }
+    table { width: 100%; border-collapse: collapse; }
+    thead tr { border-bottom: 2px solid var(--ink); }
+    th {
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--ink); padding: 0.7rem 1rem; text-align: left;
+    }
+    td {
+      padding: 0.85rem 1rem; border-bottom: 1px solid var(--border);
+      font-size: 0.9rem; color: var(--ink-light);
+    }
+    td.hl { color: var(--forest-mid); font-weight: 700; }
+    td.terra-hl { color: var(--terra); font-weight: 700; }
+    td.red-hl { color: var(--red); font-weight: 700; }
+    tr:hover td { background: var(--cream-dark); }
+
+    /* INFOBOX */
+    .infobox {
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--forest-mid);
+      background: var(--forest-light);
+      padding: 1.2rem 1.5rem; margin: 1.5rem 0;
+    }
+    .infobox strong {
+      display: block; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--forest); margin-bottom: 0.5rem;
+    }
+    .infobox p {
+      font-size: 0.9rem; color: var(--ink-light);
+      max-width: 100%; margin: 0; line-height: 1.6;
+    }
+    .infobox-terra {
+      border-left-color: var(--terra);
+      background: var(--terra-light);
+    }
+    .infobox-terra strong { color: var(--terra-dark); }
+
+    /* CHECKLISTE */
+    .checklist { margin: 1.5rem 0; }
+    .check-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+      padding: 0.8rem 0; border-bottom: 1px solid var(--border);
+    }
+    .check-item:last-child { border-bottom: none; }
+    .check-icon {
+      font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem;
+    }
+    .check-text { font-size: 0.92rem; color: var(--ink-light); line-height: 1.5; }
+    .check-text strong { color: var(--ink); }
+
+    /* RULE */
+    .rule { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+
+    /* CTA */
+    .cta-strip {
+      background: var(--forest);
+      color: var(--white); padding: 3rem 2.5rem; margin: 4rem 0 0;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 2rem; align-items: center;
+    }
+    .cta-strip h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 900; color: var(--white); margin-bottom: 0.5rem;
+    }
+    .cta-strip h3 em { color: #A8D5B5; font-style: italic; }
+    .cta-strip p { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+    .cta-btn {
+      display: inline-block; background: var(--terra);
+      color: var(--white); font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 1rem 2rem; text-decoration: none; white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: var(--terra-dark); }
+
+    /* FOOTER */
+    footer {
+      border-top: 2px solid var(--ink); padding: 1.5rem 2rem;
+      max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 1rem;
+      background: var(--white);
+    }
+    footer p { font-size: 0.78rem; color: var(--ink-muted); }
+    footer a { color: var(--forest-mid); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-stats { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 1.5rem; }
+      main { padding: 2rem 1.2rem 4rem; }
+      .two-col { grid-template-columns: 1fr; }
+      .warning-grid { grid-template-columns: 1fr; }
+      .wcard { border-right: none; border-bottom: 1px solid var(--border); }
+      .data-band { grid-template-columns: repeat(2, 1fr); }
+      .cta-strip { grid-template-columns: 1fr; }
+      .site-nav { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-logo">Investment<span>Wissen</span></div>
+  <nav class="site-nav">
+    <a href="#greenwashing">Greenwashing</a>
+    <a href="#eba">EBA-Leitlinien</a>
+    <a href="#erkennen">Erkennen</a>
+    <a href="#fazit">Fazit</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-dateline">
+      <span>Greenwashing · EBA-Regulierung 2026 · Nachhaltige Geldanlage</span>
+      <span>Juni 2026 · Unabhängige Analyse seit 2016</span>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <h1 class="hero-headline">
+          Grüne<br>
+          Versprechen,<br>
+          <em>graue</em><br>
+          Realität
+        </h1>
+        <p class="hero-deck">
+          Greenwashing ist das größte Vertrauensproblem der nachhaltigen Geldanlage. Neue EBA-Leitlinien sollen das ändern – aber Anleger müssen selbst wachsam bleiben.
+        </p>
+        <p class="hero-byline">Von <strong>Markus Gildemeister</strong> · Roboadvisor-Portal.com · Stand: Juni 2026</p>
+        <div class="hero-footer">
+          <span class="hero-pill terra-pill">Greenwashing</span>
+          <span class="hero-pill">EBA-Leitlinien</span>
+          <span class="hero-pill forest-pill">ESG 2026</span>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat-item">
+          <div class="hero-stat-value terra">42 %</div>
+          <div class="hero-stat-label">Grüner Claims ohne Beleg</div>
+          <div class="hero-stat-note">EU-Kommission Studie · 2024</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-value">2026</div>
+          <div class="hero-stat-label">EBA-Leitlinien in Kraft</div>
+          <div class="hero-stat-note">Neue Transparenzpflichten für Banken</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-value forest">Art. 9</div>
+          <div class="hero-stat-label">Strengste ESG-Klassifikation EU</div>
+          <div class="hero-stat-note">SFDR · Dunkelgrün · Impact-Fokus</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-value terra">30 Bio.</div>
+          <div class="hero-stat-label">ESG-Vermögen global ($)</div>
+          <div class="hero-stat-note">Schutz durch Regulierung nötig</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- EINFÜHRUNG -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Das grüne Versprechen und seine Schattenseiten</h2>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <p>Nachhaltige Geldanlage ist eines der am stärksten wachsenden Segmente des globalen Kapitalmarkts. Über 30 Billionen US-Dollar werden inzwischen in ESG-konforme Produkte investiert. Doch mit dem Wachstum ist auch ein Problem gewachsen, das das Vertrauen in nachhaltige Investments fundamental bedroht: <a href="https://www.roboadvisor-portal.com/greenwashing/" target="_blank" rel="noopener">Greenwashing</a> – die Praxis, Finanzprodukte, Unternehmen oder Strategien als nachhaltiger darzustellen als sie tatsächlich sind.</p>
+        <p>Eine Studie der EU-Kommission hat ergeben, dass rund 42 Prozent aller grünen Nachhaltigkeitsbehauptungen im europäischen Markt übertrieben oder irreführend sind. Das ist keine Randerscheinung – es ist ein strukturelles Problem, das Anleger täuscht, Kapitalströme in falsche Richtungen lenkt und letztendlich den gesellschaftlichen Nutzen echter Nachhaltigkeitsinvestments untergräbt.</p>
+      </div>
+      <div>
+        <p>Die Regulatoren haben reagiert. Die Europäische Bankenaufsichtsbehörde (EBA) hat 2026 neue verbindliche Leitlinien gegen Greenwashing in Kraft gesetzt, die Banken und Finanzproduktanbieter zu mehr Transparenz und belegbaren Nachhaltigkeitsbehauptungen verpflichten. Ein wichtiger Schritt – aber kein Allheilmittel. Anleger müssen selbst verstehen, woran echte Nachhaltigkeit zu erkennen ist und wie sie <a href="https://sparplan-nachhaltigkeit-crwd.vercel.app/sparplan-nachhaltige-geldanlage" target="_blank" rel="noopener">nachhaltige Geldanlage</a> wirklich umsetzen können.</p>
+        <p>Diese Analyse erklärt, was Greenwashing ist, wie die neuen EBA-Leitlinien wirken, welche Warnsignale Anleger kennen müssen – und wie man echte Nachhaltigkeit von grünem Marketing unterscheidet.</p>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p>„Greenwashing ist nicht nur ein ethisches Problem – es ist ein finanzielles. Wer in grün vermarktete, aber konventionell verwaltete Produkte investiert, zahlt mehr und bekommt weniger."</p>
+      <cite>Analyse-Kernthese · Roboadvisor-Portal.com · Juni 2026</cite>
+    </div>
+  </div>
+
+  <!-- KENNZAHLEN-BAND -->
+  <div class="data-band">
+    <div class="data-band-item">
+      <span class="data-band-value terra">42 %</span>
+      <span class="data-band-label">Grüne Claims irreführend</span>
+    </div>
+    <div class="data-band-item">
+      <span class="data-band-value">2026</span>
+      <span class="data-band-label">EBA-Leitlinien aktiv</span>
+    </div>
+    <div class="data-band-item">
+      <span class="data-band-value">SFDR</span>
+      <span class="data-band-label">EU-Klassifikationsrahmen</span>
+    </div>
+    <div class="data-band-item">
+      <span class="data-band-value terra">Art. 9</span>
+      <span class="data-band-label">Höchster Nachhaltigkeitsstandard</span>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- GREENWASHING -->
+  <div class="section" id="greenwashing">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Was Greenwashing ist – und was es nicht ist</h2>
+    </div>
+
+    <p>Greenwashing bezeichnet die irreführende Kommunikation über die Nachhaltigkeitseigenschaften eines Produkts, Unternehmens oder einer Strategie. Es reicht von aktiver Täuschung – falschen Behauptungen über ESG-Ratings oder Ausschlusskriterien – bis hin zu subtileren Formen wie dem Hervorheben marginaler Nachhaltigkeitsaspekte, während wesentliche Schäden verschwiegen werden.</p>
+
+    <p>Wichtig ist die Abgrenzung: Nicht jede vereinfachte Kommunikation über Nachhaltigkeit ist Greenwashing. Und nicht jedes Produkt, das Greenwashing-Risiken aufweist, ist bewusst täuschend. Oft entsteht Greenwashing auch durch fehlende Standards, unklare Definitionen und den Druck, auf dem boomenden ESG-Markt präsent zu sein. Die neuen EBA-Leitlinien adressieren genau diesen Graubereich.</p>
+
+    <h3>Die drei Hauptformen des Greenwashings</h3>
+
+    <div class="warning-grid">
+      <div class="wcard danger">
+        <span class="wcard-icon">🚨</span>
+        <h4>Aktive Täuschung</h4>
+        <p>Falsche oder stark übertriebene Nachhaltigkeitsbehauptungen ohne belegbare Grundlage. Produkte werden als „100% nachhaltig" oder „klimaneutral" bezeichnet, ohne dass diese Versprechen durch unabhängige Daten gedeckt sind. Schwerste Form – rechtlich relevant.</p>
+      </div>
+      <div class="wcard warning">
+        <span class="wcard-icon">⚠️</span>
+        <h4>Selektive Offenlegung</h4>
+        <p>Positive ESG-Aspekte werden hervorgehoben, während wesentliche negative Auswirkungen verschwiegen werden. Ein Energieunternehmen, das seine Solarinvestitionen bewirbt, aber über sein fossiles Kerngeschäft schweigt, betreibt selektive Offenlegung.</p>
+      </div>
+      <div class="wcard safe">
+        <span class="wcard-icon">🔍</span>
+        <h4>Vage Nachhaltigkeitsrhetorik</h4>
+        <p>Unspezifische Begriffe wie „grün", „öko" oder „nachhaltig" ohne konkrete Definition oder Messkriterien. Formal nicht falsch, aber für Anleger nutzlos. Die neue EU-Taxonomie soll diesen Graubereich einengen.</p>
+      </div>
+    </div>
+
+    <div class="infobox-terra infobox">
+      <strong>Greenwashing – reale Kosten für Anleger</strong>
+      <p>Greenwashing-Produkte haben oft höhere Verwaltungsgebühren als konventionelle Vergleichsprodukte – mit der impliziten Begründung des Nachhaltigkeitsmehrwerts. Wenn dieser Mehrwert nicht existiert, zahlen Anleger für nichts. Zusätzlich drohen Reputationsrisiken: Wenn Greenwashing aufgedeckt wird, brechen Kurse oft kurzfristig ein.</p>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- EBA LEITLINIEN -->
+  <div class="section" id="eba">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Die EBA-Leitlinien 2026 – was sich konkret ändert</h2>
+    </div>
+
+    <p>Die Europäische Bankenaufsichtsbehörde (EBA) hat mit ihren neuen <a href="https://www.vividam.de/eba-leitlinien-greenwashing-esg-bankprodukte-2026/" target="_blank" rel="noopener">Leitlinien gegen Greenwashing bei ESG-Bankprodukten 2026</a> einen wichtigen regulatorischen Meilenstein gesetzt. Die Leitlinien verpflichten Banken und Finanzproduktanbieter erstmals zu verbindlichen Standards bei Nachhaltigkeitsbehauptungen – mit konkreten Anforderungen an Transparenz, Belegbarkeit und Konsistenz.</p>
+
+    <p>Das ist ein Paradigmenwechsel: Bisher konnten Anbieter Nachhaltigkeitslabels relativ frei verwenden, solange sie nicht aktiv logen. Die neuen Leitlinien verlangen nun, dass jede Nachhaltigkeitsbehauptung durch konkrete, messbare und überprüfbare Daten belegt werden muss.</p>
+
+    <h3>Die fünf Kernpfeiler der EBA-Leitlinien</h3>
+
+    <div class="eba-steps">
+      <div class="eba-step">
+        <div class="eba-step-num">01</div>
+        <div class="eba-step-content">
+          <h4>Belegpflicht für Nachhaltigkeitsbehauptungen</h4>
+          <p>Jede Nachhaltigkeitsbehauptung muss durch konkrete, messbare Daten belegt werden. Vage Formulierungen wie „grün" oder „nachhaltig" ohne Definition sind nicht mehr zulässig. Anbieter müssen die zugrundeliegenden Methoden und Datenquellen offenlegen.</p>
+        </div>
+      </div>
+      <div class="eba-step">
+        <div class="eba-step-num">02</div>
+        <div class="eba-step-content">
+          <h4>Konsistenz zwischen Marketing und Produktrealität</h4>
+          <p>Marketingmaterialien müssen die tatsächlichen ESG-Eigenschaften des Produkts widerspiegeln. Übertreibungen oder das Hervorheben marginaler Nachhaltigkeitsaspekte bei gleichzeitigem Verschweigen wesentlicher Negativeigenschaften sind verboten.</p>
+        </div>
+      </div>
+      <div class="eba-step">
+        <div class="eba-step-num">03</div>
+        <div class="eba-step-content">
+          <h4>Klare SFDR-Zuordnung</h4>
+          <p>Produkte müssen klar ihrer SFDR-Kategorie (Artikel 6, 8 oder 9) zugeordnet werden, und diese Zuordnung muss in allen Kommunikationsmaterialien konsistent verwendet werden. Reklassifizierungen müssen transparent kommuniziert werden.</p>
+        </div>
+      </div>
+      <div class="eba-step">
+        <div class="eba-step-num">04</div>
+        <div class="eba-step-content">
+          <h4>Regelmäßige Wirkungsberichte</h4>
+          <p>Anbieter nachhaltiger Produkte müssen regelmäßig über die tatsächlich erzielten ESG-Wirkungen berichten – nicht nur über beabsichtigte. Das schließt auch negative Nebenwirkungen ein, die transparent zu kommunizieren sind.</p>
+        </div>
+      </div>
+      <div class="eba-step">
+        <div class="eba-step-num">05</div>
+        <div class="eba-step-content">
+          <h4>Aufsicht und Sanktionen</h4>
+          <p>Die nationalen Aufsichtsbehörden erhalten erweiterte Befugnisse zur Überprüfung von Nachhaltigkeitsbehauptungen. Bei Verstößen drohen empfindliche Geldstrafen und Reputationsschäden durch öffentliche Rügen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ERKENNEN -->
+  <div class="section" id="erkennen">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Greenwashing erkennen – die Checkliste für Anleger</h2>
+    </div>
+
+    <p>Auch die besten Regulierungen ersetzen nicht die eigene kritische Prüfung. Anleger, die wirklich nachhaltig investieren möchten, sollten folgende Warnsignale und Qualitätskriterien kennen:</p>
+
+    <div class="checklist">
+      <div class="check-item">
+        <span class="check-icon">🔴</span>
+        <div class="check-text"><strong>Warnsignal: Vage Begriffe ohne Definition.</strong> „Grün", „öko", „nachhaltig" oder „klimafreundlich" ohne konkrete Erklärung, was das bedeutet und wie es gemessen wird, sind ein Alarmsignal.</div>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">🔴</span>
+        <div class="check-text"><strong>Warnsignal: Keine SFDR-Klassifikation oder nur Artikel 6.</strong> Seriöse ESG-Produkte sind als Artikel 8 oder 9 klassifiziert. Artikel 6 bedeutet, dass keine besonderen ESG-Eigenschaften berücksichtigt werden.</div>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">🔴</span>
+        <div class="check-text"><strong>Warnsignal: Fehlende Ausschlussliste.</strong> Jedes seriöse nachhaltige Produkt veröffentlicht konkret, welche Branchen oder Unternehmen ausgeschlossen sind. Wenn diese Liste nicht auffindbar ist, ist Skepsis angebracht.</div>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">🟡</span>
+        <div class="check-text"><strong>Prüfen: Unabhängige ESG-Ratings.</strong> Nachhaltigkeitsbewertungen von unabhängigen Agenturen wie MSCI ESG, Sustainalytics oder ISS sind aussagekräftiger als Selbsteinschätzungen der Anbieter.</div>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">🟡</span>
+        <div class="check-text"><strong>Prüfen: Jährliche Wirkungsberichte.</strong> Gibt es einen aktuellen, öffentlich zugänglichen Nachhaltigkeitsbericht mit konkreten Kennzahlen? Ohne Berichterstattung gibt es keine Rechenschaft.</div>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">🟢</span>
+        <div class="check-text"><strong>Positiv: Artikel 9 Klassifikation.</strong> Fonds mit SFDR Artikel 9 haben ein nachhaltiges Investitionsziel als Kernzweck – das ist die strengste und verlässlichste Kategorie.</div>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">🟢</span>
+        <div class="check-text"><strong>Positiv: Transparente Portfoliooffenlegung.</strong> Anbieter, die vollständige Portfoliolisten mit ESG-Scores für jede Einzelposition veröffentlichen, haben nichts zu verbergen.</div>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">🟢</span>
+        <div class="check-text"><strong>Positiv: Kongruenz zwischen Marketing und Fondsdokumenten.</strong> Was in der Werbung steht, sollte im KID (Key Information Document) und Prospekt bestätigt werden.</div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Kriterium</th>
+            <th>Greenwashing-Risiko</th>
+            <th>Echte Nachhaltigkeit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>SFDR-Klassifikation</td><td class="red-hl">Artikel 6 oder keine Angabe</td><td class="hl">Artikel 8 oder 9</td></tr>
+          <tr><td>Ausschlusskriterien</td><td class="red-hl">Nicht veröffentlicht oder vage</td><td class="hl">Vollständige, konkrete Liste</td></tr>
+          <tr><td>ESG-Ratings</td><td class="red-hl">Nur Selbsteinschätzung</td><td class="hl">Unabhängige Agenturen (MSCI, Sustainalytics)</td></tr>
+          <tr><td>Wirkungsberichte</td><td class="red-hl">Keine oder nur Marketing-PDFs</td><td class="hl">Jährlicher, detaillierter Impact Report</td></tr>
+          <tr><td>Portfoliotransparenz</td><td class="red-hl">Nur Top-10-Holdings</td><td class="hl">Vollständige Portfoliooffenlegung</td></tr>
+          <tr><td>Kosten</td><td class="terra-hl">Hohe Gebühren ohne Mehrwert</td><td class="hl">Angemessene Kosten mit belegbarem ESG-Nutzen</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- FAZIT -->
+  <div class="section" id="fazit">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Fazit: Regulierung hilft – Eigenverantwortung bleibt</h2>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <p>Die neuen EBA-Leitlinien 2026 sind ein wichtiger Schritt in die richtige Richtung. Sie schaffen verbindliche Standards, stärken die Aufsicht und machen Greenwashing teurer – sowohl finanziell als auch reputationsbezogen. Für Anleger bedeutet das: Der Markt wird transparenter, und seriöse Anbieter werden sichtbarer.</p>
+        <p>Aber Regulierung ersetzt keine eigene Urteilsfähigkeit. Wer wirklich nachhaltig investieren möchte, muss die Grundbegriffe kennen, Warnsignale erkennen und bereit sein, tiefer in Fondsdokumente zu schauen als in Werbebroschüren.</p>
+      </div>
+      <div>
+        <p>Die gute Nachricht: Echte Nachhaltigkeit ist auffindbar. Artikel 9 Fonds, unabhängige ESG-Ratings, transparente Wirkungsberichte und klare Ausschlusskriterien sind die verlässlichsten Orientierungspunkte. Anbieter, die diese Standards erfüllen, haben nichts zu verbergen – und bieten Anlegern das, was nachhaltiges Investieren verspricht: Rendite mit Überzeugung.</p>
+        <p>Unabhängige Vergleiche, aktuelle Tests und alle relevanten nachhaltigen Robo-Advisor im DACH-Markt finden Sie auf dem <a href="https://www.roboadvisor-portal.com" target="_blank" rel="noopener">Roboadvisor-Portal</a>.</p>
+      </div>
+    </div>
+
+    <div class="infobox">
+      <strong>Zusammenfassung für Anleger</strong>
+      <p>SFDR Artikel 8 oder 9 bevorzugen · Vollständige Ausschlusslisten einfordern · Unabhängige ESG-Ratings prüfen · Jährliche Wirkungsberichte lesen · Portfoliotransparenz als Mindeststandard setzen · Kosten kritisch hinterfragen · Im Zweifel: unabhängige Vergleichsportale nutzen.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-strip">
+    <div>
+      <h3>Nachhaltige Robo-Advisor im <em>unabhängigen</em> Vergleich</h3>
+      <p>Über 48 Anbieter analysiert · ESG-Qualität bewertet · Greenwashing-Check · seit 2016</p>
+    </div>
+    <a href="https://www.roboadvisor-portal.com/robo-advisor-anbieter/" target="_blank" rel="noopener" class="cta-btn">Zur Anbieterübersicht →</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Informationsseite · <a href="https://www.roboadvisor-portal.com" target="_blank" rel="noopener">Roboadvisor-Portal.com</a> · Kein Anlageberatungsangebot · Alle Angaben ohne Gewähr · Stand: Juni 2026</p>
+  <p>© 2026 InvestmentWissen · Unabhängig & werbefrei</p>
+</footer>
+
+</body>
+</html>
